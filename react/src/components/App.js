@@ -9,6 +9,7 @@ import Start from './start';
 import Create from './create';
 import Join from './join';
 import Game from './game';
+import PublicGames from "./publicGames";
 class Main extends Component {
     render() {
         return (
@@ -20,6 +21,7 @@ class Main extends Component {
                     <Route path="/create" component={Create} />
                     <Route path="/join" component={Join} />
                     <Route path="/g*" component={Game} />
+                    <Route path="/lobbies" component={PublicGames}/>
                 </div>
             </Router>
         );

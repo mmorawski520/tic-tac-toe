@@ -11,11 +11,19 @@ class Join extends Component {
     constructor(props) {
         super(props);
         this.state={
-            visible:true
+            visible:true,
+            gameCode:"",
         };
 
     }
 
+    handleChange = (e) => {
+        this.setState({gameCode:e.target.value})
+
+    }
+    handleClick() {
+        window.location = this.state.gameCode
+    }
     render() {
         const style={
             backgroundColor:"#000000",
@@ -29,8 +37,8 @@ class Join extends Component {
                     <h1>Select correct option</h1>
                     <div className="row my-5">
                         <div className="row my-5">
-                            <div className="col-6"> <input type='text' id='code-input'placeholder='Enter your code'/><button className='btn btn-outline-light mt-1'>Join</button></div>
-                            <div className="col-6"> <button className='btn   btn-outline-light'>Join to public game</button></div>
+                            <div className="col-6"> <input type='text' id='code-input'placeholder='Enter your code' onChange={this.handleChange}/><button className='btn btn-outline-light mt-1'  onClick={() => this.handleClick()}>Join</button></div>
+                            <div className="col-6"> <button className='btn   btn-outline-light'  >Join to public game</button></div>
                         </div>
                     </div>
                 </div>

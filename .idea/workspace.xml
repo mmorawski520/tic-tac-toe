@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="961e3839-b535-4f30-ab32-1db306841587" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/php/board/detectWinner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/board/getPublicGames.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/board/isGameReady.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/board/nextRound.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/board/playerJoining.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/board/playerLeaving.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/general/connect.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/components/board.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/components/gameFinished.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/components/notFound.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/createGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/board/createGame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectMove.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/board/detectMove.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectWinner.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/isGameExisting.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/board/isGameExisting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isGameReady.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playerJoining.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playerLeaving.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/create.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/create.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/join.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/join.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/src/components/start.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/src/components/start.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1xBqrxwY80gniAbncQaMWhJW2h0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\tic-tac-toe\php\board" />
+      <recent name="C:\xampp\htdocs\tic-tac-toe\php\general" />
+      <recent name="C:\xampp\htdocs\tic-tac-toe\" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="961e3839-b535-4f30-ab32-1db306841587" name="Changes" comment="" />
+      <created>1629839032395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629839032395</updated>
+      <workItem from="1629839033666" duration="3778000" />
+      <workItem from="1629881620379" duration="5772000" />
+      <workItem from="1629916598600" duration="598000" />
+      <workItem from="1629923059379" duration="3330000" />
+      <workItem from="1629969149679" duration="4951000" />
+      <workItem from="1630002719392" duration="8482000" />
+      <workItem from="1630052381522" duration="3369000" />
+      <workItem from="1630077158485" duration="4676000" />
+      <workItem from="1630155804862" duration="4693000" />
+      <workItem from="1630177886068" duration="1318000" />
+      <workItem from="1630228170868" duration="587000" />
+      <workItem from="1630248806797" duration="2199000" />
+      <workItem from="1630267963282" duration="1196000" />
+      <workItem from="1630315639340" duration="593000" />
+      <workItem from="1630325392275" duration="583000" />
+      <workItem from="1630333184924" duration="7989000" />
+      <workItem from="1630408805861" duration="632000" />
+      <workItem from="1630417316326" duration="2432000" />
+      <workItem from="1630422290799" duration="1606000" />
+      <workItem from="1630432528069" duration="851000" />
+      <workItem from="1630434122249" duration="2453000" />
+      <workItem from="1630441809278" duration="5008000" />
+      <workItem from="1630491513268" duration="9029000" />
+      <workItem from="1630599422238" duration="5496000" />
+      <workItem from="1630686140449" duration="595000" />
+      <workItem from="1630696463661" duration="9035000" />
+      <workItem from="1630752371238" duration="3684000" />
+      <workItem from="1630767301506" duration="1164000" />
+      <workItem from="1630777662186" duration="3209000" />
+      <workItem from="1630790506889" duration="899000" />
+      <workItem from="1630841006737" duration="2886000" />
+      <workItem from="1630858004135" duration="8961000" />
+      <workItem from="1630951888179" duration="1141000" />
+      <workItem from="1630957798688" duration="1000000" />
+      <workItem from="1630961136646" duration="1199000" />
+      <workItem from="1631038990911" duration="1967000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

@@ -5,7 +5,7 @@ class Create extends Component {
 
 
     handleAdd=param => async e =>{
-        const url = "http://localhost:80/tic-tac-toe/createGame.php";
+        const url = "http://localhost:80/tic-tac-toe/php/board/createGame.php";
          this.state.isStarting=param
 
         axios.post(url, {
@@ -73,7 +73,7 @@ class Create extends Component {
         )
         if (this.state.redirect) {
 
-            return <Redirect to={{pathname: this.state.redirect, state:{gameCode:this.state.redirect}}} />};
+            return <Redirect to={{pathname: this.state.redirect, state:{gameCode:this.state.redirect}}} />}
         return (
 
             create

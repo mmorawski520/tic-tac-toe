@@ -73,3 +73,10 @@
   margin-right:5px;
 
 }
+.gameFinishedSquare{
+  width:10rem;
+  height:10rem;
+  color: navajowhite;
+  border:1px solid navajowhite;
+  margin-right:5px;
+}

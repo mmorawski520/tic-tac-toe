@@ -7,10 +7,10 @@ const trade_delay = 10000; // millis
 
 // REST endpoint
 let restdb = axios.create({
-    baseURL: 'http://localhost:80/tic-tac-toe/isGameReady.php"',
+    baseURL: 'http://localhost:80/tic-tac-toe/php/board/isGameReady.php"',
     timeout: 1000,
     headers: 'Content-Type': 'application/x-www-form-urlencoded'
-});
+})
 // Eventsource endpoint
 const realtimeURL = `https://reactrealtime-6683.restdb.io/realtime?apikey=${apikey}`
 

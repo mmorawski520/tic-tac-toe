@@ -6,8 +6,9 @@ import {
 import ReactDOM from 'react-dom'
 import {Button} from "bootstrap";
 import axios from "axios";
-import Loader from "react-loader-spinner";
+import NotFound from "./notFound";
 import GameFinished from "./gameFinished";
+import Lobby from "./lobby"
 class Game extends Component {
     constructor(props) {
         super(props);
@@ -22,13 +23,14 @@ class Game extends Component {
             currentStyle:"waitSquare",
             canMove:false,
             winner:null,
+            playerType:"guest",
         };
         this.liveUpdate = this.liveUpdate.bind(this);
     }
     setupBeforeUnloadListener = () => {
 
         window.addEventListener("beforeunload", (ev) => {
-            const url = "http://localhost:80/tic-tac-toe/playerLeaving.php";
+            const url = "http://localhost:80/tic-tac-toe/php/board/playerLeaving.php";
             axios.post(url, {
                 gameCode: window.location.pathname.substr(1,),
 
@@ -41,22 +43,27 @@ class Game extends Component {
         });
     };
 
-     handleCopyToClipBoard = () => {
-        navigator.clipboard.writeText(this.state.gameLink);
-    }
+
     handleChangeSign=(e)=>{
-         this.setState({player_turn:e})
+        this.setState({player_turn:e})
     }
     handleChangeGameStatus =(e)=>{
-         this.setState({'isReady':e})
+        this.setState({'isReady':e})
     }
     handleChangeBoard=(e)=>{
         this.setState({'board':e})
 
     }
-handleChangeWinner=(e)=>{
-         this.setState('winner':e)
-}
+    handleChangePlayerType=(e)=>{
+        this.setState({'playerType':e})
+    }
+    handleChangeWinner=(e)=>{
+        this.setState({'winner':e})
+        if(e!=null) {
+            this.setState({currentStyle: "gameFinishedSquare"})
+            this.setState({canMove:false})
+        }
+    }
     handleChangeCanMove =(e)=>{
 
         if(e==true){
@@ -67,13 +74,13 @@ handleChangeWinner=(e)=>{
         }
     }
     postMove=()=>{
-       var data={
+        var data={
             "gameCode":window.location.pathname.substr(1,),
             "board":this.state.board
         }
 
 
-        fetch('http://localhost:80/tic-tac-toe/detectMove.php', {
+        fetch('http://localhost:80/tic-tac-toe/php/board/detectMove.php', {
             method: 'POST',
             body: JSON.stringify(data),
         }).then((response)=>{
@@ -88,63 +95,64 @@ handleChangeWinner=(e)=>{
         });
     }
     squareClicked=(index)=>{
-         let player_turn = this.state.player_turn;
-         let board = this.state.board;
+        let player_turn = this.state.player_turn;
+        let board = this.state.board;
 
 
         if(board[index]!="X" && board[index]!="0" && this.state.canMove==true){
-        board[index]=player_turn;
+            board[index]=player_turn;
 
 
-         player_turn=(player_turn =="X")?"0":"X";
+            player_turn=(player_turn =="X")?"0":"X";
 
-        var currentSquare=document.getElementById(index);
-        currentSquare.classList.remove("square");
-        currentSquare.classList.add("choosenSquare");
-         this.setState({player_turn:player_turn,
-                             board:board,
-                             currentStyle:"waitSquare",
-                             canMove:false
+            var currentSquare=document.getElementById(index);
+            currentSquare.classList.remove("square");
+            currentSquare.classList.add("choosenSquare");
+            this.setState({player_turn:player_turn,
+                    board:board,
+                    currentStyle:"waitSquare",
+                    canMove:false
 
-             },
+                },
 
-             )
+            )
             this.postMove()
-            }
+        }
 
     }
     liveUpdate=()=>{
-         var data={
+        var data={
 
-             "gameCode":window.location.pathname.substr(1,)
-         }
+            "gameCode":window.location.pathname.substr(1,)
+        }
 
         setInterval(()=>{
 
-             fetch('http://localhost:80/tic-tac-toe/isGameReady.php', {
-                 method: 'POST',
-                 body: JSON.stringify(data),
-             }).then((response)=>{
-                 return response.json();
-             }).then((data)=>{
-                 console.log(data)
-                 this.handleChangeSign(data.sign)
-                 this.handleChangeGameStatus(data.isReady)
-                 this.handleChangeCanMove(data.whoCanMove)
-                 if(data.board!=null){
-                 this.handleChangeBoard(data.board)}
-                 this.handleChangeWinner(data.winner)
-             }).catch((error)=>{
-                 console.log(error)
-             });
+            fetch('http://localhost:80/tic-tac-toe/php/board/isGameReady.php', {
+                method: 'POST',
+                body: JSON.stringify(data),
+            }).then((response)=>{
+                return response.json();
+            }).then((data)=>{
+                console.log(data)
+                this.handleChangeSign(data.sign)
+                this.handleChangeGameStatus(data.isReady)
+                this.handleChangeCanMove(data.whoCanMove)
+                this.handleChangePlayerType(data.isHost)
+                if(data.board!=null){
+                    this.handleChangeBoard(data.board)}
+                this.handleChangeWinner(data.winner)
+            }).catch((error)=>{
+                console.log(error)
+            });
 
         },2000);
     }
     componentDidMount=()=> {
         this.setupBeforeUnloadListener();
         this.liveUpdate();
-        const url = "http://localhost:80/tic-tac-toe/isGameExisting.php";
-        const join_url="http://localhost:80/tic-tac-toe/playerJoining.php";
+        const url = "http://localhost:80/tic-tac-toe/php/board/isGameExisting.php";
+        const join_url="http://localhost:80/tic-tac-toe/php/board/playerJoining.php";
 
         axios.post(url, {
             gameCode: window.location.pathname.substr(1,),
@@ -174,59 +182,20 @@ handleChangeWinner=(e)=>{
     }
     render() {
 
-
         const style = {
             backgroundColor: "#000000",
             borderRadius: "5px",
             color: "#CCC9DC",
-
-
-
         }
 
-
-
-        const game = (
-            <div className=" h-50 d-flex justify-content-center align-items-center">
-                <div style={style} className="px-5 py-2">
-                    <h1>Your game is almost ready :D</h1>
-                    <div className="row my-1">
-                        <div className="row my-5">
-                            <div className="col-6">
-                                <button className='btn btn-lg btn-outline-light my-1'
-                                        onClick={this.handleCopyToClipBoard}>Copy to clipboard
-                                </button>
-                                <h3>Code </h3>
-                                <h3 id='#code'>{this.state.gameCode}</h3>
-
-                            </div>
-                            <div className="col-6">Waiting for second player
-                                <Loader
-                                    type="spin"
-                                    color="#EEEEEE"
-                                    height={100}
-                                    width={100}
-
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        )
-        const notFound=(
-            <div className=" h-50 d-flex justify-content-center align-items-center">
-                <div style={style} className="px-5 py-2">
-                   Game not found :c
-                </div>
-            </div>
-        )
         const board=(
             <>
                 <div className=" h-50 d-flex justify-content-center align-items-center">
                     <div style={style} className="px-5 py-2">
-                       <h1>It's actually working game</h1>
+                        <h1>It's actually working game</h1>
+                        <div className="col-12 mt-1">
+                            <GameFinished {...this.state}></GameFinished>
+                        </div>
                         <div className="row">
                             <div className="col-10 ">
 
@@ -237,10 +206,9 @@ handleChangeWinner=(e)=>{
 
                                 </div>
                             </div>
-                            <div className="col-2">
-                                <GameFinished {...this.state}></GameFinished>
-                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </>
@@ -248,14 +216,14 @@ handleChangeWinner=(e)=>{
 
         if (this.state.isGameExisting) {
             if(!this.state.isReady){
-           return game
+                return <Lobby {...this.state}></Lobby>
             }
             else{
                 return board
             }
         }
-       else{
-           return notFound
+        else{
+            return <NotFound {...this.state}></NotFound>
         }
 
     }
